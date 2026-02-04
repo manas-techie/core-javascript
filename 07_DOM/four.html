@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Document</title>
+    </head>
+    <body style="background-color: black; color: white;">
+        <ul class="language">
+            <li>JavaScript</li>
+        </ul>
+    </body>
+    <script>
+        function addLanguage(lang){
+            const li = document.createElement('li');
+            li.innerText = lang;
+            const ul = document.querySelector('.language');
+            ul.appendChild(li);
+        }
+
+        addLanguage('Python');
+        addLanguage('C++');
+        addLanguage('Java');
+        addLanguage('Ruby');
+
+        // optimized way
+        function addLanguageOptimized(lang){
+            const li = document.createElement('li');
+            li.appendChild(document.createTextNode(lang));
+            document.querySelector('.language').appendChild(li);
+        }
+
+        addLanguageOptimized('Go');
+        addLanguageOptimized('Rust');
+
+
+        // Edit
+        const secondLang = document.querySelector('li:nth-child(2)');
+        // secondLang.innerText = 'TypeScript';
+        const newLi = document.createElement('li');
+        newLi.textContent = 'TypeScript';
+        secondLang.replaceWith(newLi);
+
+        // Edit
+        const FirstLang = document.querySelector('li:nth-child(1)');
+        FirstLang.outerHTML ='<li>Mojo</li>';
+
+        // Delete
+        const thirdLang = document.querySelector('li:nth-child(3)'); // C++
+        thirdLang.remove();
+
+    </script>
+</html>

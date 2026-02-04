@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Document</title>
+    </head>
+    <body style="background-color: black; color: white;">
+        <div class="container">
+
+        </div>
+    </body>
+
+    <script>
+    const h1 = document.createElement('h1');
+    h1.className = 'heading';
+    h1.id = Math.round(Math.random()*10+1);
+    h1.setAttribute('title', 'This is a heading');
+    h1.style.color = 'yellow';
+    // h1.innerText = 'Hello World';
+    const addtext = document.createTextNode('This is a text node');
+    h1.appendChild(addtext);
+
+    document.querySelector('div.container').appendChild(h1); //For show this in the browser and insert in the div
+    console.log(h1);
+
+    console.log(h1.parentElement);
+    
+    </script>
+</html>
